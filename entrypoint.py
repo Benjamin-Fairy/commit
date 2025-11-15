@@ -46,7 +46,7 @@ def run():
         add_args.extend(files.strip("'").split())
     if rebase == 'true':
         debug(git(['pull', '--rebase', '--autostash', 'origin', branch]))
-    push_args = ['push', '--follow-tags', '--signed=yes', '--allow-empty', '--set-upstream', 'origin', branch]
+    push_args = ['push', '--follow-tags', '--signed=yes', '--set-upstream', 'origin', branch]
     if force_push == 'true':
         push_args.append('--force')
     debug(git(['checkout', '-B', branch]))
